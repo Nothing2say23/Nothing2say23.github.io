@@ -136,4 +136,4 @@ theme: Fan
 deploy:
   type: git
   repository: git@github.com:Nothing2say23/Nothing2say23.github.io.git
-  branch: main
+  branch: master
