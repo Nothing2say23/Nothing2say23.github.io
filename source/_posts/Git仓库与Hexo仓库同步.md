@@ -42,6 +42,20 @@ $ git commit -m "new modifed"
 $ git push origin Hexo
 $ hexo g -d
 ```
+# Github文件夹出现箭头，且打不开文件
+原因：GitHub将他视为一个子系统模块，因此在上传代码时隔绝了这个文件夹，上传失败。
+
+{% asset_img image_right_arrow.png 显示页面 %}
+
+解决：
+``` bash
+1. 删除子文件夹里面的.git文件
+2. 执行git rm --cached [文件夹名]
+3. 执行git add .  (或是把 . 换成自己要传的文件夹）
+4. 执行git commit -m "commit messge"
+5. 执行git push origin [branch_name]
+```
+
 # 利用.gitignore来忽略关键文件和文件夹：
 ## Git 忽略规则优先级
 在 .gitingore 文件中，每一行指定一个忽略规则，Git 检查忽略规则的时候有多个来源，它的优先级如下（由高到低）：
