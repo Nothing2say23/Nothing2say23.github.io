@@ -111,10 +111,10 @@ ignore:
 #   limit: 10000
 
 algolia:
-  applicationID: XXXX
-  apiKey: XXXXX
-  adminKey: XXXXX
-  indexName: XXXXX
+  applicationID: "RKK0DB0GMP"
+  apiKey: "56182324eab4033106e19b53bec717b4"
+  adminKey: "0b98c3d5f72dea8ffd6a1e25e9ad058c"
+  indexName: "Nothing2say"
 
 
 # # hexo-tag-cloud
