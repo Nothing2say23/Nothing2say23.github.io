@@ -51,4 +51,26 @@
         <tag>博客</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Git仓库与Hexo仓库同步</title>
+    <url>/2023/08/03/Git%E4%BB%93%E5%BA%93%E4%B8%8EHexo%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Git分支的操作总结"><a href="#Git分支的操作总结" class="headerlink" title="Git分支的操作总结"></a>Git分支的操作总结</h1><ol>
+<li>切换分支，比如<code>git checkout master</code>是切换到master分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout 任意分支      </span><br></pre></td></tr></table></figure></li>
+<li>创建并切换到新分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout -b 新建分支      </span><br></pre></td></tr></table></figure></li>
+<li>更新分支代码<code>并</code>提交<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add *       </span><br><span class="line">$ git commit -m <span class="string">&quot;新建分支&quot;</span>      </span><br><span class="line">$ git push origin 新建分支       </span><br></pre></td></tr></table></figure></li>
+<li>查看所有分支 和 查看当前分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch -a </span><br><span class="line">$ git branch     </span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="使用git分支保存hexo博客源码到github"><a href="#使用git分支保存hexo博客源码到github" class="headerlink" title="使用git分支保存hexo博客源码到github"></a>使用git分支保存hexo博客源码到github</h1><p>主要是新建一个新的分支，然后将本地Hexo目录保存在新分支中，然后与远程仓库关联。</p>
+<p>后续即便你再发布博客时，deploy生成public文件，在提交博客源码时，也不会将其带上去，因为有.gitignore将其忽略了。</p>
+<p>然后默认分支改为保存博客源码的source分支，但是depoly的发布分支设为master。</p>
+<p>以后每次修改了主题或者新增了博文，按照以下步骤同步：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;new modifed&quot;</span></span><br><span class="line">$ git push origin Hexo</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>8月日志</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>

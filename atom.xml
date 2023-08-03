@@ -6,7 +6,7 @@
   <link href="http://nothing2say23.github.io/atom.xml" rel="self"/>
   
   <link href="http://nothing2say23.github.io/"/>
-  <updated>2023-08-03T07:10:10.277Z</updated>
+  <updated>2023-08-03T08:50:09.449Z</updated>
   <id>http://nothing2say23.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git仓库与Hexo仓库同步</title>
+    <link href="http://nothing2say23.github.io/2023/08/03/Git%E4%BB%93%E5%BA%93%E4%B8%8EHexo%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/"/>
+    <id>http://nothing2say23.github.io/2023/08/03/Git%E4%BB%93%E5%BA%93%E4%B8%8EHexo%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</id>
+    <published>2023-08-03T08:38:33.000Z</published>
+    <updated>2023-08-03T08:50:09.449Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git分支的操作总结"><a href="#Git分支的操作总结" class="headerlink" title="Git分支的操作总结"></a>Git分支的操作总结</h1><ol><li>切换分支，比如<code>git checkout master</code>是切换到master分支<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout 任意分支      </span><br></pre></td></tr></table></figure></li><li>创建并切换到新分支<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b 新建分支      </span><br></pre></td></tr></table></figure></li><li>更新分支代码<code>并</code>提交<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *       </span><br><span class="line">$ git commit -m <span class="string">&quot;新建分支&quot;</span>      </span><br><span class="line">$ git push origin 新建分支       </span><br></pre></td></tr></table></figure></li><li>查看所有分支 和 查看当前分支<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a </span><br><span class="line">$ git branch     </span><br></pre></td></tr></table></figure></li></ol><h1 id="使用git分支保存hexo博客源码到github"><a href="#使用git分支保存hexo博客源码到github" class="headerlink" title="使用git分支保存hexo博客源码到github"></a>使用git分支保存hexo博客源码到github</h1><p>主要是新建一个新的分支，然后将本地Hexo目录保存在新分支中，然后与远程仓库关联。</p><p>后续即便你再发布博客时，deploy生成public文件，在提交博客源码时，也不会将其带上去，因为有.gitignore将其忽略了。</p><p>然后默认分支改为保存博客源码的source分支，但是depoly的发布分支设为master。</p><p>以后每次修改了主题或者新增了博文，按照以下步骤同步：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;new modifed&quot;</span></span><br><span class="line">$ git push origin Hexo</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Git分支的操作总结&quot;&gt;&lt;a href=&quot;#Git分支的操作总结&quot; class=&quot;headerlink&quot; title=&quot;Git分支的操作总结&quot;&gt;&lt;/a&gt;Git分支的操作总结&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;切换分支，比如&lt;code&gt;git checkout master&lt;/code&gt;是切换到master分支&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git checkout 任意分支      &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;创建并切换到新分支&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git checkout -b 新建分支      &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;更新分支代码&lt;code&gt;并&lt;/code&gt;提交&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git add *       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git commit -m &lt;span class=&quot;string&quot;&gt;&amp;quot;新建分支&amp;quot;&lt;/span&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git push origin 新建分支       &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;查看所有分支 和 查看当前分支&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git branch -a &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git branch     &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;使用git分支保存hexo博客源码到github&quot;&gt;&lt;a href=&quot;#使用git分支保存hexo博客源码到github&quot; class=&quot;headerlink&quot; title=&quot;使用git分支保存hexo博客源码到github&quot;&gt;&lt;/a&gt;使用git分支保存hexo博客源码到github&lt;/h1&gt;&lt;p&gt;主要是新建一个新的分支，然后将本地Hexo目录保存在新分支中，然后与远程仓库关联。&lt;/p&gt;
+&lt;p&gt;后续即便你再发布博客时，deploy生成public文件，在提交博客源码时，也不会将其带上去，因为有.gitignore将其忽略了。&lt;/p&gt;
+&lt;p&gt;然后默认分支改为保存博客源码的source分支，但是depoly的发布分支设为master。&lt;/p&gt;
+&lt;p&gt;以后每次修改了主题或者新增了博文，按照以下步骤同步：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git commit -m &lt;span class=&quot;string&quot;&gt;&amp;quot;new modifed&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git push origin Hexo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo g -d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="8月日志" scheme="http://nothing2say23.github.io/categories/8%E6%9C%88%E6%97%A5%E5%BF%97/"/>
+    
+    
+    <category term="博客" scheme="http://nothing2say23.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Git" scheme="http://nothing2say23.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>博客设置页面</title>
