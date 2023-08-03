@@ -18,7 +18,7 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>8月日志</category>
+        <category>2023年8月日志</category>
       </categories>
       <tags>
         <tag>博客</tag>
@@ -78,7 +78,7 @@
 <p>可以用git check-ignore命令检查.gitignore文件中是否有规则写错了:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git check-ignore -v key.txt</span><br><span class="line">.gitignore:9:key.txt    key.txt</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>8月日志</category>
+        <category>2023年8月日志</category>
       </categories>
       <tags>
         <tag>博客</tag>
