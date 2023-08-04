@@ -55,7 +55,6 @@ $ hexo g -d
 4. 执行git commit -m "commit messge"
 5. 执行git push origin [branch_name]
 ```
-
 # 利用.gitignore来忽略关键文件和文件夹：
 ## Git 忽略规则优先级
 在 .gitingore 文件中，每一行指定一个忽略规则，Git 检查忽略规则的时候有多个来源，它的优先级如下（由高到低）：
