@@ -19,7 +19,6 @@
 
 <p>解决：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. 删除子文件夹里面的.git文件</span><br><span class="line">2. 执行git <span class="built_in">rm</span> --cached [文件夹名]</span><br><span class="line">3. 执行git add .  (或是把 . 换成自己要传的文件夹）</span><br><span class="line">4. 执行git commit -m <span class="string">&quot;commit messge&quot;</span></span><br><span class="line">5. 执行git push origin [branch_name]</span><br></pre></td></tr></table></figure>
-
 <h1 id="利用-gitignore来忽略关键文件和文件夹："><a href="#利用-gitignore来忽略关键文件和文件夹：" class="headerlink" title="利用.gitignore来忽略关键文件和文件夹："></a>利用.gitignore来忽略关键文件和文件夹：</h1><h2 id="Git-忽略规则优先级"><a href="#Git-忽略规则优先级" class="headerlink" title="Git 忽略规则优先级"></a>Git 忽略规则优先级</h2><p>在 .gitingore 文件中，每一行指定一个忽略规则，Git 检查忽略规则的时候有多个来源，它的优先级如下（由高到低）：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">从命令行中读取可用的忽略规则</span><br><span class="line">当前目录定义的规则</span><br><span class="line">父级目录定义的规则，依次递推</span><br><span class="line"><span class="variable">$GIT_DIR</span>/info/exclude 文件中定义的规则</span><br><span class="line">core.excludesfile中定义的全局规则</span><br></pre></td></tr></table></figure>
 <h2 id="Git-忽略规则匹配语法"><a href="#Git-忽略规则匹配语法" class="headerlink" title="Git 忽略规则匹配语法"></a>Git 忽略规则匹配语法</h2><p>在 .gitignore 文件中，每一行的忽略规则的语法如下：</p>
