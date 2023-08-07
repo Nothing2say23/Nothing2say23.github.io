@@ -5,9 +5,12 @@
     <url>/2023/08/03/Git%E4%BB%93%E5%BA%93%E4%B8%8EHexo%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h1 id="Git分支的操作总结"><a href="#Git分支的操作总结" class="headerlink" title="Git分支的操作总结"></a>Git分支的操作总结</h1><ol>
 <li>切换分支，比如<code>git checkout master</code>是切换到master分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout 任意分支      </span><br></pre></td></tr></table></figure></li>
-<li>创建并切换到新分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout -b 新建分支      </span><br></pre></td></tr></table></figure></li>
+<li>创建并切换到新分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout -b 新建分支      </span><br></pre></td></tr></table></figure>
+3.切换分支，同时保证本地文件和远程分支的一致性<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout 任意分支 --</span><br></pre></td></tr></table></figure></li>
 <li>更新分支代码<code>并</code>提交<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add *       </span><br><span class="line">$ git commit -m <span class="string">&quot;新建分支&quot;</span>      </span><br><span class="line">$ git push origin 新建分支       </span><br></pre></td></tr></table></figure></li>
-<li>查看所有分支 和 查看当前分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch -a </span><br><span class="line">$ git branch     </span><br></pre></td></tr></table></figure></li>
+<li>查看所有分支 和 查看当前分支<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch -a </span><br><span class="line">$ git branch     </span><br></pre></td></tr></table></figure>
+6.当出现<code>git branch -a</code>没反应时，可能没有连接到远程仓库：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">删除本地的.git文件</span><br><span class="line">$ git init</span><br><span class="line">$ git remote add origin &lt;your remote repository SSH <span class="built_in">link</span>&gt;</span><br><span class="line">$ git fetch</span><br></pre></td></tr></table></figure>
+如下图所示：<img src="/2023/08/03/Git%E4%BB%93%E5%BA%93%E4%B8%8EHexo%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/image_solution_1.png" class="" title="显示页面"></li>
 </ol>
 <h1 id="使用git分支保存hexo博客源码到github"><a href="#使用git分支保存hexo博客源码到github" class="headerlink" title="使用git分支保存hexo博客源码到github"></a>使用git分支保存hexo博客源码到github</h1><p>主要是新建一个新的分支，然后将本地Hexo目录保存在新分支中，然后与远程仓库关联。</p>
 <p>后续即便你再发布博客时，deploy生成public文件，在提交博客源码时，也不会将其带上去，因为有.gitignore将其忽略了。</p>
@@ -314,7 +317,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2023/08/03/hello-world/</url>
+    <url>/2023/08/05/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
