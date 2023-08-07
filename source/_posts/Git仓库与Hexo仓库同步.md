@@ -17,17 +17,31 @@ $ git checkout 任意分支
 ``` bash
 $ git checkout -b 新建分支      
 ```
-3. 更新分支代码`并`提交
+3.切换分支，同时保证本地文件和远程分支的一致性
+``` bash
+$ git checkout 任意分支 --
+```
+4. 更新分支代码`并`提交
 ``` bash
 $ git add *       
 $ git commit -m "新建分支"      
 $ git push origin 新建分支       
 ```
-4. 查看所有分支 和 查看当前分支
+5. 查看所有分支 和 查看当前分支
 ``` bash
 $ git branch -a 
 $ git branch     
 ```
+6.当出现`git branch -a`没反应时，可能没有连接到远程仓库：
+``` bash
+删除本地的.git文件
+$ git init
+$ git remote add origin <your remote repository SSH link>
+$ git fetch
+``` 
+如下图所示：
+{% asset_img image_solution_1.png 显示页面 %}
+
 # 使用git分支保存hexo博客源码到github
 主要是新建一个新的分支，然后将本地Hexo目录保存在新分支中，然后与远程仓库关联。
 
